@@ -1,0 +1,65 @@
+/* ==========================================
+   1. BASE STYLES (Mặc định cho Mobile)
+   ========================================== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 15px;
+  background-color: #f4f4f4;
+}
+
+h1 {
+  text-align: center;
+}
+
+/* Các div hiển thị dạng 1 cột full-width trên Mobile */
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.card {
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+/* ==========================================
+   2. FIRST MEDIA QUERY (Dành cho Tablet / Màn hình vừa)
+   ========================================== */
+@media screen and (min-width: 600px) {
+  /* Chuyển bố cục sang dải ngang và chia thành 2 cột */
+  .container {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    width: calc(50% - 8px); /* Chiếm 50% chiều rộng màn hình */
+  }
+}
+
+
+/* ==========================================
+   3. SECOND MEDIA QUERY (Dành cho Desktop / Màn hình lớn)
+   ========================================== */
+@media screen and (min-width: 900px) {
+  /* Chia thành 4 cột trên màn hình máy tính */
+  .card {
+    width: calc(25% - 12px); /* Chiếm 25% chiều rộng màn hình */
+  }
+}
